@@ -1,0 +1,62 @@
+# Dependencies
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+backend/venv/
+
+# IDE & OS
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+!*.env.example
+
+# Database
+*.db
+*.sqlite3
+recoverai.db
+
+# Node & Next.js
+node_modules/
+frontend/node_modules/
+.next/
+frontend/.next/
+out/
+.turbo/
+
+# Testing & Playwright
+playwright-report/
+frontend/playwright-report/
+test-results/
+frontend/test-results/
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+
+# Logs
+*.log
+backend/logs/
+
+# Docker
+docker-compose.override.yml

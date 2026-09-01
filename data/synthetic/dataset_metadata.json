@@ -1,0 +1,35 @@
+{
+  "seed": 42,
+  "generation_timestamp": "2026-08-23T16:13:00.391170+00:00",
+  "customer_count": 7000,
+  "order_count": 8000,
+  "payment_count": 8000,
+  "failed_payment_count": 2077,
+  "successful_payment_count": 5923,
+  "customer_profile_distribution": {
+    "HIGH_QUALITY": 48.89,
+    "MEDIUM_QUALITY": 36.51,
+    "RISKY": 14.6
+  },
+  "failure_distribution": {
+    "temporary_bank_error": 29.27,
+    "network_error": 14.49,
+    "insufficient_funds": 21.71,
+    "expired_card": 14.25,
+    "authentication_failure": 11.6,
+    "risk_flagged": 5.01,
+    "unknown_failure": 3.66
+  },
+  "amount_distribution": {
+    "200-2000": 40.64,
+    "2001-10000": 34.76,
+    "10001-50000": 19.6,
+    "50001-150000": 5.0
+  },
+  "ground_truth_action_distribution": {
+    "retry": 26.24,
+    "message": 23.74,
+    "escalate": 33.9,
+    "stop": 16.13
+  }
+}

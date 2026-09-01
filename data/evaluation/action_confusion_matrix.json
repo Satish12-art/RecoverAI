@@ -1,0 +1,172 @@
+{
+  "recoverai": {
+    "confusion_matrix_raw": {
+      "retry": {
+        "retry": 4,
+        "message": 0,
+        "escalate": 0,
+        "stop": 0
+      },
+      "message": {
+        "retry": 0,
+        "message": 0,
+        "escalate": 0,
+        "stop": 0
+      },
+      "escalate": {
+        "retry": 0,
+        "message": 0,
+        "escalate": 0,
+        "stop": 0
+      },
+      "stop": {
+        "retry": 0,
+        "message": 0,
+        "escalate": 1,
+        "stop": 0
+      }
+    },
+    "confusion_matrix_normalized": {
+      "retry": {
+        "retry": 100.0,
+        "message": 0.0,
+        "escalate": 0.0,
+        "stop": 0.0
+      },
+      "message": {
+        "retry": 0.0,
+        "message": 0.0,
+        "escalate": 0.0,
+        "stop": 0.0
+      },
+      "escalate": {
+        "retry": 0.0,
+        "message": 0.0,
+        "escalate": 0.0,
+        "stop": 0.0
+      },
+      "stop": {
+        "retry": 0.0,
+        "message": 0.0,
+        "escalate": 100.0,
+        "stop": 0.0
+      }
+    },
+    "per_action": {
+      "retry": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "support": 4
+      },
+      "message": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      },
+      "escalate": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 1
+      },
+      "stop": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      }
+    },
+    "macro_precision": 0.25,
+    "macro_recall": 0.25,
+    "macro_f1": 0.25,
+    "weighted_f1": 0.8,
+    "overall_accuracy": 0.8
+  },
+  "baseline": {
+    "confusion_matrix_raw": {
+      "retry": {
+        "retry": 4,
+        "message": 0,
+        "escalate": 0,
+        "stop": 0
+      },
+      "message": {
+        "retry": 0,
+        "message": 0,
+        "escalate": 0,
+        "stop": 0
+      },
+      "escalate": {
+        "retry": 0,
+        "message": 0,
+        "escalate": 0,
+        "stop": 0
+      },
+      "stop": {
+        "retry": 0,
+        "message": 0,
+        "escalate": 1,
+        "stop": 0
+      }
+    },
+    "confusion_matrix_normalized": {
+      "retry": {
+        "retry": 100.0,
+        "message": 0.0,
+        "escalate": 0.0,
+        "stop": 0.0
+      },
+      "message": {
+        "retry": 0.0,
+        "message": 0.0,
+        "escalate": 0.0,
+        "stop": 0.0
+      },
+      "escalate": {
+        "retry": 0.0,
+        "message": 0.0,
+        "escalate": 0.0,
+        "stop": 0.0
+      },
+      "stop": {
+        "retry": 0.0,
+        "message": 0.0,
+        "escalate": 100.0,
+        "stop": 0.0
+      }
+    },
+    "per_action": {
+      "retry": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "support": 4
+      },
+      "message": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      },
+      "escalate": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 1
+      },
+      "stop": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      }
+    },
+    "macro_precision": 0.25,
+    "macro_recall": 0.25,
+    "macro_f1": 0.25,
+    "weighted_f1": 0.8,
+    "overall_accuracy": 0.8
+  }
+}

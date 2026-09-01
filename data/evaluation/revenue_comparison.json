@@ -1,0 +1,8 @@
+{
+  "recoverai_revenue": 16000.0,
+  "baseline_revenue": 16000.0,
+  "ground_truth_revenue": 16000.0,
+  "absolute_uplift": 0.0,
+  "percentage_uplift": 0.0,
+  "ground_truth_revenue_capture_rate": 100.0
+}

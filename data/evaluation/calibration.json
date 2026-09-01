@@ -1,0 +1,77 @@
+{
+  "bins": [
+    {
+      "bin_range": "0.0\u20130.1",
+      "case_count": 1,
+      "avg_predicted_probability": 0.0,
+      "actual_recovery_rate": 0.0,
+      "calibration_error": 0.0
+    },
+    {
+      "bin_range": "0.1\u20130.2",
+      "case_count": 0,
+      "avg_predicted_probability": 0.15,
+      "actual_recovery_rate": 0.0,
+      "calibration_error": 0.0
+    },
+    {
+      "bin_range": "0.2\u20130.3",
+      "case_count": 0,
+      "avg_predicted_probability": 0.25,
+      "actual_recovery_rate": 0.0,
+      "calibration_error": 0.0
+    },
+    {
+      "bin_range": "0.3\u20130.4",
+      "case_count": 0,
+      "avg_predicted_probability": 0.35,
+      "actual_recovery_rate": 0.0,
+      "calibration_error": 0.0
+    },
+    {
+      "bin_range": "0.4\u20130.5",
+      "case_count": 0,
+      "avg_predicted_probability": 0.45,
+      "actual_recovery_rate": 0.0,
+      "calibration_error": 0.0
+    },
+    {
+      "bin_range": "0.5\u20130.6",
+      "case_count": 0,
+      "avg_predicted_probability": 0.55,
+      "actual_recovery_rate": 0.0,
+      "calibration_error": 0.0
+    },
+    {
+      "bin_range": "0.6\u20130.7",
+      "case_count": 0,
+      "avg_predicted_probability": 0.65,
+      "actual_recovery_rate": 0.0,
+      "calibration_error": 0.0
+    },
+    {
+      "bin_range": "0.7\u20130.8",
+      "case_count": 0,
+      "avg_predicted_probability": 0.75,
+      "actual_recovery_rate": 0.0,
+      "calibration_error": 0.0
+    },
+    {
+      "bin_range": "0.8\u20130.9",
+      "case_count": 0,
+      "avg_predicted_probability": 0.85,
+      "actual_recovery_rate": 0.0,
+      "calibration_error": 0.0
+    },
+    {
+      "bin_range": "0.9\u20131.0",
+      "case_count": 4,
+      "avg_predicted_probability": 1.0,
+      "actual_recovery_rate": 1.0,
+      "calibration_error": 0.0
+    }
+  ],
+  "brier_score": 0.0,
+  "expected_calibration_error": 0.0,
+  "total_evaluated": 5
+}

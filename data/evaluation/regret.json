@@ -1,0 +1,9 @@
+{
+  "total_regret": 0.0,
+  "average_regret": 0.0,
+  "median_regret": 0.0,
+  "p95_regret": 0.0,
+  "total_cases_evaluated": 5,
+  "zero_regret_case_count": 5,
+  "zero_regret_rate": 100.0
+}

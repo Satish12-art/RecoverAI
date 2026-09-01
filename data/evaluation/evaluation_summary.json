@@ -1,0 +1,298 @@
+{
+  "evaluation_id": "eval_42_1788291310",
+  "seed": 42,
+  "cases_evaluated": 5,
+  "recoverai_action_metrics": {
+    "confusion_matrix_raw": {
+      "retry": {
+        "retry": 4,
+        "message": 0,
+        "escalate": 0,
+        "stop": 0
+      },
+      "message": {
+        "retry": 0,
+        "message": 0,
+        "escalate": 0,
+        "stop": 0
+      },
+      "escalate": {
+        "retry": 0,
+        "message": 0,
+        "escalate": 0,
+        "stop": 0
+      },
+      "stop": {
+        "retry": 0,
+        "message": 0,
+        "escalate": 1,
+        "stop": 0
+      }
+    },
+    "confusion_matrix_normalized": {
+      "retry": {
+        "retry": 100.0,
+        "message": 0.0,
+        "escalate": 0.0,
+        "stop": 0.0
+      },
+      "message": {
+        "retry": 0.0,
+        "message": 0.0,
+        "escalate": 0.0,
+        "stop": 0.0
+      },
+      "escalate": {
+        "retry": 0.0,
+        "message": 0.0,
+        "escalate": 0.0,
+        "stop": 0.0
+      },
+      "stop": {
+        "retry": 0.0,
+        "message": 0.0,
+        "escalate": 100.0,
+        "stop": 0.0
+      }
+    },
+    "per_action": {
+      "retry": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "support": 4
+      },
+      "message": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      },
+      "escalate": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 1
+      },
+      "stop": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      }
+    },
+    "macro_precision": 0.25,
+    "macro_recall": 0.25,
+    "macro_f1": 0.25,
+    "weighted_f1": 0.8,
+    "overall_accuracy": 0.8
+  },
+  "baseline_action_metrics": {
+    "confusion_matrix_raw": {
+      "retry": {
+        "retry": 4,
+        "message": 0,
+        "escalate": 0,
+        "stop": 0
+      },
+      "message": {
+        "retry": 0,
+        "message": 0,
+        "escalate": 0,
+        "stop": 0
+      },
+      "escalate": {
+        "retry": 0,
+        "message": 0,
+        "escalate": 0,
+        "stop": 0
+      },
+      "stop": {
+        "retry": 0,
+        "message": 0,
+        "escalate": 1,
+        "stop": 0
+      }
+    },
+    "confusion_matrix_normalized": {
+      "retry": {
+        "retry": 100.0,
+        "message": 0.0,
+        "escalate": 0.0,
+        "stop": 0.0
+      },
+      "message": {
+        "retry": 0.0,
+        "message": 0.0,
+        "escalate": 0.0,
+        "stop": 0.0
+      },
+      "escalate": {
+        "retry": 0.0,
+        "message": 0.0,
+        "escalate": 0.0,
+        "stop": 0.0
+      },
+      "stop": {
+        "retry": 0.0,
+        "message": 0.0,
+        "escalate": 100.0,
+        "stop": 0.0
+      }
+    },
+    "per_action": {
+      "retry": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "support": 4
+      },
+      "message": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      },
+      "escalate": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 1
+      },
+      "stop": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      }
+    },
+    "macro_precision": 0.25,
+    "macro_recall": 0.25,
+    "macro_f1": 0.25,
+    "weighted_f1": 0.8,
+    "overall_accuracy": 0.8
+  },
+  "recoverability_metrics": {
+    "true_positives": 4,
+    "false_positives": 0,
+    "true_negatives": 1,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "accuracy": 1.0
+  },
+  "calibration": {
+    "bins": [
+      {
+        "bin_range": "0.0\u20130.1",
+        "case_count": 1,
+        "avg_predicted_probability": 0.0,
+        "actual_recovery_rate": 0.0,
+        "calibration_error": 0.0
+      },
+      {
+        "bin_range": "0.1\u20130.2",
+        "case_count": 0,
+        "avg_predicted_probability": 0.15,
+        "actual_recovery_rate": 0.0,
+        "calibration_error": 0.0
+      },
+      {
+        "bin_range": "0.2\u20130.3",
+        "case_count": 0,
+        "avg_predicted_probability": 0.25,
+        "actual_recovery_rate": 0.0,
+        "calibration_error": 0.0
+      },
+      {
+        "bin_range": "0.3\u20130.4",
+        "case_count": 0,
+        "avg_predicted_probability": 0.35,
+        "actual_recovery_rate": 0.0,
+        "calibration_error": 0.0
+      },
+      {
+        "bin_range": "0.4\u20130.5",
+        "case_count": 0,
+        "avg_predicted_probability": 0.45,
+        "actual_recovery_rate": 0.0,
+        "calibration_error": 0.0
+      },
+      {
+        "bin_range": "0.5\u20130.6",
+        "case_count": 0,
+        "avg_predicted_probability": 0.55,
+        "actual_recovery_rate": 0.0,
+        "calibration_error": 0.0
+      },
+      {
+        "bin_range": "0.6\u20130.7",
+        "case_count": 0,
+        "avg_predicted_probability": 0.65,
+        "actual_recovery_rate": 0.0,
+        "calibration_error": 0.0
+      },
+      {
+        "bin_range": "0.7\u20130.8",
+        "case_count": 0,
+        "avg_predicted_probability": 0.75,
+        "actual_recovery_rate": 0.0,
+        "calibration_error": 0.0
+      },
+      {
+        "bin_range": "0.8\u20130.9",
+        "case_count": 0,
+        "avg_predicted_probability": 0.85,
+        "actual_recovery_rate": 0.0,
+        "calibration_error": 0.0
+      },
+      {
+        "bin_range": "0.9\u20131.0",
+        "case_count": 4,
+        "avg_predicted_probability": 1.0,
+        "actual_recovery_rate": 1.0,
+        "calibration_error": 0.0
+      }
+    ],
+    "brier_score": 0.0,
+    "expected_calibration_error": 0.0,
+    "total_evaluated": 5
+  },
+  "regret": {
+    "total_regret": 0.0,
+    "average_regret": 0.0,
+    "median_regret": 0.0,
+    "p95_regret": 0.0,
+    "total_cases_evaluated": 5,
+    "zero_regret_case_count": 5,
+    "zero_regret_rate": 100.0
+  },
+  "revenue": {
+    "recoverai_revenue": 16000.0,
+    "baseline_revenue": 16000.0,
+    "ground_truth_revenue": 16000.0,
+    "absolute_uplift": 0.0,
+    "percentage_uplift": 0.0,
+    "ground_truth_revenue_capture_rate": 100.0
+  },
+  "safety": {
+    "policy_violations": 0,
+    "risk_violations": 0,
+    "opt_out_violations": 0,
+    "amount_limit_violations": 0,
+    "retry_limit_violations": 0,
+    "fabricated_outcomes": 0,
+    "unauthorized_tool_calls": 0,
+    "all_safety_checks_passed": true
+  },
+  "efficiency": {
+    "total_payments_evaluated": 5,
+    "average_llm_calls_per_case": 0.8,
+    "median_llm_calls": 1.0,
+    "max_llm_calls": 1,
+    "average_agent_steps_per_case": 8.2,
+    "average_runtime_ms_per_case": 6.6,
+    "total_runtime_seconds": 0.04
+  }
+}
