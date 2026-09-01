@@ -1,5 +1,5 @@
 {
-  "evaluation_id": "eval_42_1788291310",
+  "evaluation_id": "eval_42_1788300456",
   "seed": 42,
   "cases_evaluated": 5,
   "recoverai_action_metrics": {
@@ -292,7 +292,7 @@
     "median_llm_calls": 1.0,
     "max_llm_calls": 1,
     "average_agent_steps_per_case": 8.2,
-    "average_runtime_ms_per_case": 6.6,
-    "total_runtime_seconds": 0.04
+    "average_runtime_ms_per_case": 7.4,
+    "total_runtime_seconds": 0.044
   }
 }
