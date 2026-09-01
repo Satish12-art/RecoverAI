@@ -32,6 +32,7 @@
 8. [Project Directory Map](#-project-directory-map)
 
 ---
+Deployed link: https://recover-rbl3px16d-satish12-art.vercel.app/
 
 ## 🏛 System Architecture & Lifecycle Map
 
