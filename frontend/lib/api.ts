@@ -10,7 +10,9 @@ import {
   EvaluationSummaryData,
 } from "../types";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const RAW_API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+// Clean trailing slashes and accidental /api suffixes
+const API_BASE = RAW_API_BASE.replace(/\/+$/, "").replace(/\/api$/, "");
 
 async function fetchJson<T>(url: string, options?: RequestInit): Promise<T> {
   const res = await fetch(`${API_BASE}${url}`, {

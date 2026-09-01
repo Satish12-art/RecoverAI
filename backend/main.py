@@ -28,14 +28,25 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# CORS — allow frontend
+# CORS — allow frontend and Vercel preview deployments
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[settings.frontend_url, "http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origin_regex=r"https?://.*",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/", tags=["health"])
+def root():
+    """Root endpoint for deployment health checks."""
+    return {
+        "name": "RecoverAI API",
+        "status": "online",
+        "version": "0.1.0",
+        "docs": "/docs",
+        "health": "/api/health",
+    }
 
 # ── Health & Config ──
 @app.get("/api/health", response_model=HealthResponse, tags=["health"])
