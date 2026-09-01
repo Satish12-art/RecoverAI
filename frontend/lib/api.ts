@@ -10,12 +10,22 @@ import {
   EvaluationSummaryData,
 } from "../types";
 
-const RAW_API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-// Clean trailing slashes and accidental /api suffixes
-const API_BASE = RAW_API_BASE.replace(/\/+$/, "").replace(/\/api$/, "");
+// If NEXT_PUBLIC_API_URL is provided, use it directly; otherwise use relative path (proxied by Next.js rewrites)
+const getApiBase = () => {
+  if (typeof window !== "undefined") {
+    const publicUrl = process.env.NEXT_PUBLIC_API_URL;
+    if (publicUrl) {
+      return publicUrl.replace(/\/+$/, "").replace(/\/api$/, "");
+    }
+    return ""; // Relative URL in browser -> handled by Next.js rewrites proxy
+  }
+  const serverUrl = process.env.API_URL || process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+  return serverUrl.replace(/\/+$/, "").replace(/\/api$/, "");
+};
 
 async function fetchJson<T>(url: string, options?: RequestInit): Promise<T> {
-  const res = await fetch(`${API_BASE}${url}`, {
+  const apiBase = getApiBase();
+  const res = await fetch(`${apiBase}${url}`, {
     cache: "no-store",
     headers: {
       "Content-Type": "application/json",
