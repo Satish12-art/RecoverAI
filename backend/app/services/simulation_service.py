@@ -282,3 +282,24 @@ class SimulationRunner:
             policy_decisions=policy_decs,
             case_traces=case_traces,
         )
+
+    @staticmethod
+    def reset_simulation(db: Session, seed: int = 42, initial_limit: int = 100) -> dict:
+        """Reset all simulation outcomes, actions, cases, and re-run initial batch."""
+        # 1. Delete all outcomes and actions
+        db.query(RecoveryOutcome).delete()
+        db.query(AgentAction).delete()
+        db.query(RecoveryCase).delete()
+        
+        # 2. Reset any payment statuses back to 'failed' if they were modified
+        db.query(Payment).filter(Payment.status != "failed", Payment.failure_code.isnot(None)).update({"status": "failed"})
+        db.commit()
+
+        # 3. Re-run clean initial simulation batch
+        result = SimulationRunner.run(db=db, seed=seed, limit=initial_limit, all_payments=False)
+        return {
+            "status": "ok",
+            "message": f"Simulation reset. Re-processed initial {initial_limit} cases.",
+            "initial_recovered": result.batch_revenue_recovered,
+        }
+

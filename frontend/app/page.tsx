@@ -6,6 +6,7 @@ import {
   fetchDashboard,
   fetchCases,
   runSimulation,
+  resetSimulation,
   fetchRazorpayStatus,
   triggerRazorpayTestWebhook,
 } from "@/lib/api";
@@ -32,6 +33,7 @@ import {
   Activity,
   ChevronRight,
   Lock,
+  RotateCcw,
 } from "lucide-react";
 
 export default function DashboardPage() {
@@ -43,6 +45,7 @@ export default function DashboardPage() {
   // Simulation runner state
   const [simLimit, setSimLimit] = useState<number | "all">(100);
   const [simRunning, setSimRunning] = useState(false);
+  const [simResetting, setSimResetting] = useState(false);
   const [simResult, setSimResult] = useState<SimulationRunResult | null>(null);
   const [simError, setSimError] = useState<string | null>(null);
 
@@ -93,6 +96,23 @@ export default function DashboardPage() {
       setSimError(err.message || "Simulation execution failed");
     } finally {
       setSimRunning(false);
+    }
+  };
+
+  const handleResetSimulation = async () => {
+    if (!confirm("Reset database simulation state and reseed initial 100 cases?")) {
+      return;
+    }
+    try {
+      setSimResetting(true);
+      setSimError(null);
+      setSimResult(null);
+      await resetSimulation({ seed: 42, initial_limit: 100 });
+      await loadData();
+    } catch (err: any) {
+      setSimError(err.message || "Simulation reset failed");
+    } finally {
+      setSimResetting(false);
     }
   };
 
@@ -382,28 +402,44 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          <div>
-            <button
-              onClick={handleRunSimulation}
-              disabled={simRunning}
-              className={`w-full py-2.5 px-4 rounded-lg font-medium text-sm transition-all flex items-center justify-center gap-2 ${
-                simRunning
-                  ? "bg-blue-600/50 text-white cursor-wait animate-pulse"
-                  : "bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-900/30"
-              }`}
-            >
-              {simRunning ? (
-                <>
-                  <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
-                  Running Recovery Agent...
-                </>
-              ) : (
-                <>
-                  <Play className="w-4 h-4 fill-white" />
-                  Run Recovery Simulation
-                </>
-              )}
-            </button>
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <button
+                onClick={handleRunSimulation}
+                disabled={simRunning || simResetting}
+                className={`flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition-all flex items-center justify-center gap-2 ${
+                  simRunning
+                    ? "bg-blue-600/50 text-white cursor-wait animate-pulse"
+                    : "bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-900/30"
+                }`}
+              >
+                {simRunning ? (
+                  <>
+                    <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+                    Running Agent...
+                  </>
+                ) : (
+                  <>
+                    <Play className="w-4 h-4 fill-white" />
+                    Run Recovery Simulation
+                  </>
+                )}
+              </button>
+
+              <button
+                onClick={handleResetSimulation}
+                disabled={simRunning || simResetting}
+                title="Reset simulation outcomes back to clean initial state"
+                className={`py-2.5 px-3 rounded-lg text-xs font-mono font-medium transition-all flex items-center justify-center gap-1.5 border ${
+                  simResetting
+                    ? "bg-slate-800 text-slate-400 border-slate-700 cursor-wait animate-pulse"
+                    : "bg-[#0c101a] hover:bg-[#151c2d] text-slate-300 border-[#1e293b] hover:text-white"
+                }`}
+              >
+                <RotateCcw className={`w-3.5 h-3.5 ${simResetting ? "animate-spin" : ""}`} />
+                <span>{simResetting ? "Resetting..." : "Reset"}</span>
+              </button>
+            </div>
 
             {simResult && !simRunning && (
               <div className="mt-3 p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-300 space-y-1">

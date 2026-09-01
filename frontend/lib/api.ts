@@ -138,6 +138,15 @@ export async function runSimulation(payload: {
   });
 }
 
+export async function resetSimulation(params: { seed?: number; initial_limit?: number } = {}): Promise<any> {
+  const q = new URLSearchParams();
+  if (params.seed) q.set("seed", params.seed.toString());
+  if (params.initial_limit) q.set("initial_limit", params.initial_limit.toString());
+  return fetchJson(`/api/simulate/reset?${q.toString()}`, {
+    method: "POST",
+  });
+}
+
 // 7. Evaluation
 export async function fetchEvaluationSummary(): Promise<EvaluationSummaryData> {
   return fetchJson<EvaluationSummaryData>("/api/evaluation/summary");

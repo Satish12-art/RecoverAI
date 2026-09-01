@@ -33,3 +33,17 @@ def run_simulation_endpoint(
         mode=req.mode,
         fast_mode=req.fast_mode,
     )
+
+
+@router.post("/reset")
+def reset_simulation_endpoint(
+    seed: int = 42,
+    initial_limit: int = 100,
+    db: Session = Depends(get_db),
+):
+    """Reset all simulation state and restore initial seeded state."""
+    return SimulationRunner.reset_simulation(
+        db=db,
+        seed=seed,
+        initial_limit=initial_limit,
+    )
